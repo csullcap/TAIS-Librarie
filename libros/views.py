@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import LibroForm
+from .forms import LibroForm, AutorForm
 
 # Create your views here.
 
@@ -13,3 +13,8 @@ def libros_crear(request):
 
 def autores(request):
     return render(request, 'autores.html')
+
+def autores_crear(request):
+    return render(request, 'crear-autor.html',{
+        'form':AutorForm
+    })
