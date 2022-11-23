@@ -4,12 +4,10 @@
 
 <h1>crear autor</h1>
 
-<form action="">
-{% csrf_token %}
-    {{form}}
-    <button >Save</button>
+<form method="POST"  action="">
+ {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Guardar">
 </form>
-
-
 
 {% endblock %}

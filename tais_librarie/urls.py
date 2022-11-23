@@ -23,5 +23,6 @@ urlpatterns = [
     path('libros/', views.libros),
     path('libros/crear', views.libros_crear),
     path('autores/', views.autores),
-    path('autores/crear', views.autores_crear)
+    path('autores/crear', views.autores_crear),
+    path('autores/<int:id>', views.autores_detalle, name = 'detalle-autor'),
 ]

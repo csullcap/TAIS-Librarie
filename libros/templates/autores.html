@@ -3,7 +3,15 @@
 {% block content %}
 
 <h1>Autores</h1>
+
+{% for autor in autores %}
+<article class="card"></article>          
+        <a href="{% url 'detalle-autor' autor.id %}">
+            <h1>{{autor.nombre}}</h1>
+        </a>
+</article>
+{% endfor %}
 <button>
-    <a href="/autores/crear">Crear libro</a>
+    <a href="/autores/crear">Crear autor</a>
 </button>
 {% endblock %}
