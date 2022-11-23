@@ -1,13 +1,10 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>crear autor</h1>
 
-<form method="POST"  action="">
- {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Guardar">
+<form method="POST" action="">
+  {% csrf_token %} {{form.as_p}}
+  <input type="submit" value="Guardar" />
 </form>
 
 {% endblock %}

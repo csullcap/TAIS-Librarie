@@ -1,17 +1,27 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Libros</h1>
-<form>
-    
 
-</form>
-
-
+<table>
+    {% for libro in libros %}
+    <tr>
+      <th>
+        <a href="{% url 'detalle-libro' libro.id %}">
+          <h1>{{libro.nombre}}</h1>
+        </a>
+      </th>
+      <th>
+        <form action="{% url 'eliminar-libro' id=libro.id %}" method="post">
+          {% csrf_token %}
+          <button>Eliminar</button>
+        </form>
+      </th>
+    </tr>
+    {% endfor %}
+  </table>
 
 <button>
-    <a href="/libros/crear">Crear libro</a>
+  <a href="/libros/crear">Crear libro</a>
 </button>
 
 {% endblock %}
