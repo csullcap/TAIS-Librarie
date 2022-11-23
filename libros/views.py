@@ -34,3 +34,8 @@ def autores_detalle(request, id):
     return render(request, 'detalle-autor.html',{
         'autor':autores
     })
+
+def autores_eliminar(request, id):
+    autor = Autor.objects.get(id = id)
+    autor.delete()
+    return redirect('/autores')

@@ -3,14 +3,21 @@
 {% block content %}
 
 <h1>Autores</h1>
-
+<table>
 {% for autor in autores %}
-<article class="card"></article>          
-        <a href="{% url 'detalle-autor' autor.id %}">
+    <tr>
+        <th><a href="{% url 'detalle-autor' autor.id %}">
             <h1>{{autor.nombre}}</h1>
         </a>
-</article>
-{% endfor %}
+        </th>
+        <th>
+        <form action="{% url 'eliminar-autor' id=autor.id %}" method="post">
+            {% csrf_token %}
+            <button>Eliminar</button>
+        </form>
+        </th>
+    </tr>
+{% endfor %}</table>
 <button>
     <a href="/autores/crear">Crear autor</a>
 </button>
